@@ -200,4 +200,4 @@ sitemap:
 deploy:
   type: git
   repository: https://github.com/Zirpon/hexo-theme-zirpon
-  branch: master
+  branch: page
