@@ -3,7 +3,7 @@ title: "First Article, Blog Opening"
 catalog: true
 date: 2018-11-18 10:51:24
 subtitle: "This is hexo theme Demo."
-header-img: "Demo.png"
+header-img: `"Demo.png"`
 tags:
 - Hexo
 - Blog
@@ -15,17 +15,21 @@ catagories:
 > This BeanTech theme created by [YuHsuan](http://beantech.org) modified from the original Porter [Kaijun](http://kaijun.rocks/hexo-theme-huxblog/)
 
 # [Live Demo](http://beantech.org)
+
 ---
 ![BeanTech Desktop](http://beantech.org/img/beantech-desktop.png)
 
 # Usage
+
 ---
 I publish the whole project for your convenience, so you can just follow the instruction down below, then you can easily customiz your own blog!
 
 Let's begin!!!
 
 ## Init
+
 ---
+
 ```bash
 git clone https://github.com/YenYuHsuan/hexo-theme-beantech.git ./hexo-beantech
 cd hexo-beantech
@@ -87,6 +91,7 @@ signature-img: img/signature/<your-signature-ID>
 My icon is using iron man, you can change to your own icon at `css/image`.
 
 ### Post tag
+
 You can decide to show post tags or not.
 
 ```yml
