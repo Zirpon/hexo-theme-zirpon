@@ -123,5 +123,5 @@ hexo deploy # hexo will push the static files automatically into the specific br
 <script async defer src="https://buttons.github.io/buttons.js"></script>
 <!-- Place this tag where you want the button to render. -->
 
-Please <a class="github-button" href="https://github.com/YenYuHsuan/hexo-theme-beantech" data-icon="octicon-star" aria-label="Star YenYuHsuan/hexo-theme-beantech on GitHub">Star</a> this Project if you like it! <a class="github-button" href="https://github.com/YenYuHsuan" aria-label="Follow @YenYuHsuan on GitHub">Follow</a> would also be appreciated!
+Please <a class="github-button" href="https://github.com/Zirpon/hexo-theme-zirpon" data-icon="octicon-star" aria-label="Star Zirpon/hexo-theme-zirpon on GitHub">Star</a> this Project if you like it! <a class="github-button" href="https://github.com/Zirpon" aria-label="Follow @Zirpon on GitHub">Follow</a> would also be appreciated!
 Peace!
