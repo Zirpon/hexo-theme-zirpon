@@ -3,15 +3,15 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Your Title
-subtitle: This is hexo theme
-author: John Doe
+title: Zirpon Blog 
+subtitle: 张志鹏博客
+author: Zirpon Cheung
 language:
 timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://yoursite-url       # Note: don't forget to modify the CNAME file to your url
+url: http://dianfanbao.ltd       # Note: don't forget to modify the CNAME file to your url
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -19,12 +19,12 @@ permalink_defaults:
 #Custom Setting Start
 
 # Site settings
-SEOTitle: Beantech | 豆科技
-email: beantech@gmail.com
+SEOTitle: 张志鹏 | Blog
+email: 735037139@qq.com
 description: ""
 keyword: ""
-header-img: img/header_img/home-bg-2-dark.png
-signature: true #show signature
+header-img: http://dianfanbao.ltd/file/?RomanTheatre_ZH-CN9417897135_1920x1080_jpg
+signature: false #show signature
 signature-img: img/signature/BeanTechSign-white.png 
 
 
@@ -32,17 +32,18 @@ signature-img: img/signature/BeanTechSign-white.png
 # RSS: false
 # weibo_username:     Demonbaneen
 # zhihu_username:     Demonbane
-github_username:    YenYuHsuan
+github_username:    Zirpon
 # twitter_username:   Demonbane_x
-facebook_username:  YenYuHsuan
-linkedin_username:  yu-hsuan-yen
+#facebook_username:  YenYuHsuan
+#linkedin_username:  yu-hsuan-yen
 
 # Build settings
 anchorjs: true                          # if you want to customize anchor. check out line:181 of `post.html`
+paginate: 10
 
 
 # Disqus settings
-disqus_username: your-disqus-ID
+#disqus_username: your-disqus-ID
 
 # Duoshuo settings
 # duoshuo_username: kaijun
@@ -54,14 +55,14 @@ duoshuo_share: true                     # set to false if you want to use Commen
 # Baidu Analytics
 # ba_track_id: 4cc1f2d8f3067386cc5cdb626a202900
 # Google Analytics
-ga_track_id: 'UA-XXXXXXXX-X'          # Format: UA-xxxxxx-xx
-ga_domain: yoursite
+#ga_track_id: 'UA-XXXXXXXX-X'          # Format: UA-xxxxxx-xx
+#ga_domain: yoursite
 
 
 # Sidebar settings
 sidebar: true                       # whether or not using Sidebar.
-sidebar-about-description: "Hi, i'm John Doe"
-sidebar-avatar: img/ironman-draw.png      # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar-about-description: "For the next quantum leap<br>离开世界之前，一切都是过程"
+sidebar-avatar: http://dianfanbao.ltd/file/?profileImg_jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 widgets:
 - featured-tags
 - short-about
@@ -84,17 +85,38 @@ featured-condition-size: 1              # A tag will be featured if the size of 
 ## Friends
 friends: [
     {
-        title: "Bean Tech",
-        href: "http://beantech.org"
+    #     title: "Su",
+    #     href: "http://su.gallery/"
+    # },{
+        title: "乱序",
+        href: "http://mida.re/"
     },{
-        title: "Kaijun's Blog",
-        href: "http://blog.kaijun.rocks"
+        title: "前端外刊评论",
+        href: "http://qianduan.guru/"
     },{
-        title: "Hux Blog",
-        href: "http://huangxuan.me"
+        title: "天镶的博客",
+        href: "http://lingyu.wang/"
     },{
-        title: "It Helps SEO",
-        href: "#"
+        title: "Luke 的自留地",
+        href: "http://hmqk1995.github.io"
+    },{
+        title: "Ebn's Blog",
+        href: "http://ebnbin.com/"
+    },{
+        title: "SmdCn's Blog",
+        href: "http://blog.smdcn.net"
+    },{
+        title: "David's Game",
+        href: "https://www.ruoyaowu.com/"
+    },{
+        title: "DHong Say",
+        href: "http://dhong.co"
+    },{
+        title: "尹峰以为",
+        href: "http://ingf.github.io/"
+    },{
+        title: "解旻的博客",
+        href: "http://xieminis.me/"
     }
 ]
 
@@ -177,5 +199,5 @@ sitemap:
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repository: https://github.com/YenYuHsuan/hexo-theme-beantech.git
+  repository: hhttps://github.com/Zirpon/hexo-theme-zirpon
   branch: gh-page
