@@ -3,7 +3,7 @@ title: "First Article, Blog Opening"
 catalog: true
 date: 2018-11-18 10:51:24
 subtitle: "This is hexo theme Demo."
-header-img: `"Demo.png"`
+header-img: "Demo.png"
 tags:
 - Hexo
 - Blog
