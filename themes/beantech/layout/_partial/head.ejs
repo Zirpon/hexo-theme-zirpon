@@ -5,24 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="<%= config.description %>">
     <meta name="keyword"  content="<%= config.keyword %>">
-    <link rel="shortcut icon" href="<%= config.root %>img/ironman-draw.png">
-    <!-- Place this tag in your head or just before your close body tag. -->
-    <script async defer src="https://buttons.github.io/buttons.js"></script>
-    <title>
-        <% if (page.title) { %>
-          <%= page.title + ' - ' + config.SEOTitle %>
-        <% } else{%>
-          <%= config.SEOTitle %>
-        <% } %>
-    </title>
-
-    <link rel="canonical" href="<%= config.url + config.root + (page.path||'').replace('index.html', '') %>">
+    <!-- link rel="shortcut icon" href="<%= config.root %>img/ironman-draw.png" -->
+    <link rel="shortcut icon" href="<%= config.root %>img/timg.jpeg">
 
     <!-- Bootstrap Core CSS -->
     <%- css('css/bootstrap.min.css') %>
 
     <!-- Custom CSS --> 
-    <%- css('css/beantech.min.css')%>
+    <!-- %- css('css/beantech.min.css')% -->
     
     <!-- Pygments Highlight CSS -->
     <%- css('css/highlight') %>
@@ -34,6 +24,53 @@
     <%- css('css/signature')%>
 
     <%- css('css/toc')%>
+
+    <%- css('css/beantech.css')%>
+
+
+
+    <!--新东西 -->
+    <% if (config.wave) { %>
+    <!-- wave start -->
+    <link rel="stylesheet" href="<%= config.root %>css/wave.css" />
+    <!-- wave end -->
+    <% } %>
+
+    <% if (config.top) { %>
+    <!-- top start (article top hot config) -->
+    <link rel="stylesheet" href="<%= config.root %>css/top.css" />
+    <!-- top end -->
+    <% } %>
+
+    <a id="rocket" href="#top" class=""></a>
+
+    <% if (config.search) { %>
+      <!-- Search start -->
+      <link rel="stylesheet" href="<%= config.root %>css/search.css" />
+      <!-- Search end -->
+    <% } %>
+
+    <% if (config.themecolor) { %>
+    <!-- ThemeColor start -->
+    <link rel="stylesheet" href="<%= config.root %>css/themecolor.css" />
+    <!-- ThemeColor end -->
+    <% } %>
+ 
+    <!--新东西 -->
+
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <title>
+        <% if (page.title) { %>
+          <%= page.title + ' - ' + config.SEOTitle %>
+        <% } else{%>
+          <%= config.SEOTitle %>
+        <% } %>
+    </title>
+
+    <link rel="canonical" href="<%= config.root + (page.path||'').replace('index.html', '') %>">
+
+
 
     <!-- Custom Fonts -->
     <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->

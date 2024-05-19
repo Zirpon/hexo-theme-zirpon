@@ -4,26 +4,32 @@
 
 # Site
 title: Cheung Zirpon 
-subtitle: 张志鹏
+subtitle: 
 author: Zirpon Cheung
-language:
+language: zh-CN
 timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://dianfanbao.ltd       # Note: don't forget to modify the CNAME file to your url
-root: /
+#url: https://champon.gitee.io/     # Note: don't forget to modify the CNAME file to your url
+#root: /blog
 permalink: :year/:month/:day/:title/
 permalink_defaults:
+
+# Category & Tag
+default_category: uncategorized
+category_map:
+tag_map:
+home_posts_tag: true # show posts tags
 
 #Custom Setting Start
 
 # Site settings
-SEOTitle: 张志鹏 | Blog
+SEOTitle: Zirpon | Blog
 email: 735037139@qq.com
 description: ""
 keyword: ""
-header-img: img/header_img/RomanTheatre_ZH-CN9417897135_1920x1080.jpg
+header-img: "img/header_img/roman.png"
 #header-img: http://dianfanbao.ltd/file/?home-bg-o.png
 #header-img: http://ozilwgpje.bkt.clouddn.com/scenery/car.jpg?imageslim
 #header-img: http://dianfanbao.ltd:8080/RomanTheatre_ZH-CN9417897135_1920x1080.jpg
@@ -33,7 +39,7 @@ signature-img: img/signature/BeanTechSign-white.png
 
 # SNS settings
 # RSS: false
-# weibo_username:     Demonbaneen
+weibo_username:     monkeyzhang
 # zhihu_username:     Demonbane
 github_username:    Zirpon
 # twitter_username:   Demonbane_x
@@ -48,11 +54,30 @@ paginate: 10
 # Disqus settings
 #disqus_username: your-disqus-ID
 
+#过期了
+#livere_uid: MTAyMC80MTc2OS8xODMxNQ==
+livere_uid: false
+
+# Gitment
+# Introduction: https://imsun.net/posts/gitment-introduction/
+gitment:
+    enable: true
+    mint: true # RECOMMEND, A mint on Gitment, to support count, language and proxy_gateway
+    count: true # Show comments count in post meta area
+    lazy: false # Comments lazy loading with a button
+    cleanly: false # Hide 'Powered by ...' on footer, and more
+    language: # Force language, or auto switch by theme
+    github_user: Zirpon # {you github user id}
+    github_repo: hexo-theme-zirpon
+    client_id: edb885d2752998f3ce98 #{刚才申请的ClientID}
+    client_secret: eb7c71b4d472854659628a5d119d052f1a77a2a0 #{刚才申请的Client Secret}
+    proxy_gateway: # Address of api proxy, See: https://github.com/aimingoo/intersect
+    redirect_protocol: # Protocol of redirect_uri with force_redirect_protocol when mint enabled
+
 # Duoshuo settings
 # duoshuo_username: kaijun
 # Share component is depend on Comment so we can NOT use share only.
-duoshuo_share: true                     # set to false if you want to use Comment without Sharing
-
+#duoshuo_share: true                     # set to false if you want to use Comment without Sharing
 
 # Analytics settings
 # Baidu Analytics
@@ -60,33 +85,36 @@ duoshuo_share: true                     # set to false if you want to use Commen
 # Google Analytics
 #ga_track_id: 'UA-XXXXXXXX-X'          # Format: UA-xxxxxx-xx
 #ga_domain: yoursite
-
+## 过期了
+#cnzz_track_id: 1275748672
+cnzz_track_id: false
 
 # Sidebar settings
 sidebar: true                       # whether or not using Sidebar.
 sidebar-about-description: "For the next quantum leap\t[离开世界之前，一切都是过程]"
 #sidebar-about-description: "离开世界之前，一切都是过程"
 #sidebar-avatar: http://dianfanbao.ltd/file/?ironman-draw.png      # use absolute URL, seeing it's used in both `/` and `/about/`
-sidebar-avatar: img/IMG_5015.JPG      # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar-avatar: img/IMG_5015.JPG   # use absolute URL, seeing it's used in both `/` and `/about/`
 #sidebar-avatar: http://dianfanbao.ltd:8080/profileImg.jpg
 widgets:
+- visitor   # busuanzi: https://busuanzi.ibruce.info/
 - featured-tags
 - short-about
 - recent-posts
 - friends-blog
-# - archive
-# - category
+- archive
+- category
 
 # widget behavior
 ## Archive
 archive_type: 'monthly'
 show_count: true
 
-
 ## Featured Tags
 featured-tags: true                     # whether or not using Feature-Tags
 featured-condition-size: 1              # A tag will be featured if the size of it is more than this condition value
 
+jumptoc: true
 
 ## Friends
 friends: [
@@ -94,36 +122,52 @@ friends: [
     #     title: "Su",
     #     href: "http://su.gallery/"
     # },{
-        title: "乱序",
-        href: "http://mida.re/"
+        title: "Adoo's blog",
+        href: "http://www.roading.org"
     },{
-        title: "Luke 的自留地",
-        href: "http://hmqk1995.github.io"
+        title: "娄振林专栏",
+        href: "https://blog.csdn.net/chosen0ne/"
     },{
-        title: "Ebn's Blog",
-        href: "http://ebnbin.com/"
+        title: "Milo的游戏开发",
+        href: "https://www.cnblogs.com/miloyip/"
     },{
-        title: "SmdCn's Blog",
-        href: "http://blog.smdcn.net"
+        title: "Just Love U",
+        href: "https://www.cnblogs.com/zhaoyl/"
     },{
-        title: "David's Game",
-        href: "https://www.ruoyaowu.com/"
+        title: "sniperHW",
+        href: "https://www.cnblogs.com/sniperHW/"
     },{
-        title: "DHong Say",
-        href: "http://dhong.co"
+        title: "那谁的技术博客",
+        href: "http://www.cppblog.com/converse/"
     },{
-        title: "尹峰以为",
-        href: "http://ingf.github.io/"
+        title: "陈硕的Blog",
+        href: "http://www.cppblog.com/Solstice/"
     },{
-        title: "解旻的博客",
-        href: "http://xieminis.me/"
+        title: "30分钟带你了解Docker",
+        href: "https://www.cnblogs.com/learnhow/p/9420404.html#4035973"
+    },{
+        title: "LeftNotEasy - Wangda Tan",
+        href: "https://leftnoteasy.cnblogs.com/"
+    },{
+        title: "云风的 BLOG",
+        href: "https://blog.codingnow.com/"
+    },{
+        title: "zero MQ",
+        href: "https://iyuan.iteye.com/blog/search?page=4&query=ZeroMQ%E5%88%9D%E4%BD%93%E9%AA%8C"
+    },{
+        title: "levblanc blog",
+        href: "https://levblanc.github.io/"
+    },{
+        title: "zhangruipeng blog",
+        href: "https://blog.zhangruipeng.me/hexo-theme-icarus/"
+    },{
+        title: "v-vincen blog",
+        href: "https://v-vincen.life/"
     }
 ]
 
 
 #Custom Setting End
-
-
 
 # Directory
 source_dir: source
@@ -150,12 +194,6 @@ highlight:
   line_number: true
   auto_detect: true
   tab_replace:
-
-# Category & Tag
-default_category: uncategorized
-category_map:
-tag_map:
-home_posts_tag: true # show posts tags
 
 # Date / Time format
 ## Hexo uses Moment.js to parse and display date
@@ -185,11 +223,41 @@ markdown:
     linkify: true
     typographer: true
     quotes: '“”‘’'
+  anchors:
+    # Minimum level for ID creation. (Ex. h2 to h6)
+    level: 2
+    # A suffix that is prepended to the number given if the ID is repeated.
+    collisionSuffix: 'v'           
+    # If `true`, creates an anchor tag with a permalink besides the heading.
+    permalink: true              
+    # Class used for the permalink anchor tag.
+    permalinkClass: header-anchor 
+    # The symbol used to make the permalink
+    permalinkSymbol: ¶
+  plugins:
+    - markdown-it-abbr
+    - markdown-it-footnote
+    - markdown-it-ins
+    - markdown-it-sub
+    - markdown-it-sup
+
+# MeingJS support for Aplayer
+# reference: https://github.com/metowolf/MetingJS & https://github.com/MoePlayer/APlayer
+metingjs: false
+data-id: 2564108876
+data-server: netease  
+data-type: playlist
+data-fixed: true
+  #data-mini: true
+  #data-autoplay: true 
   
+video_player: false
+
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
 theme: beantech
+## theme: false
 
 #sitemap
 sitemap:
@@ -199,5 +267,47 @@ sitemap:
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repository: https://github.com/Zirpon/hexo-theme-zirpon
-  branch: page
+  repository: git@gitee.com:champon/blog-webpage.git
+  branch: scene_20210104_01
+
+wave: true
+themecolor: true
+top: true
+viewer: true
+wordcount: true
+
+search:
+  enable: true
+  path: search.json
+  zipPath: search.flv
+  versionPath: searchVersion.json
+  field: post
+  # if manual, trigger search by pressing enter key or search button
+  trigger: auto  # if auto, trigger search by changing input 
+  top_n_per_article: -1 # show top n results per article, show all results by setting to -1
+
+## 待实现功能
+
+scroll: false
+
+tip:
+  enable: false
+  copyright: Say what you think...
+share: false
+
+gitter:
+  room: your-community/your-room
+
+# Gitalk Settings
+# Doc: https://github.com/gitalk/gitalk/blob/master/readme-cn.md
+gitalk:
+  owner:                          # 'GitHub repo owner'
+  admin:                          # 'GitHub repo'
+  repo:                           # ['GitHub repo owner and collaborators, only these guys can initialize github issues']
+  clientID:                       # 'GitHub Application Client ID'
+  clientSecret:                   # 'GitHub Application Client Secret'
+  perPage: 10                     # Pagination size, with maximum 100.
+  pagerDirection: last            # Comment sorting direction, available values are last and first.
+  createIssueManually: false      # By default, Gitalk will create a corresponding github issue for your every single page automatically when the logined user is belong to the admin users. You can create it manually by setting this option to true
+  language: en                    # Localization language key, en, zh-CN and zh-TW are currently available.
+  maxCommentHeight: 250           # An optional number to limit comments' max height, over which comments will be folded.Default 250.

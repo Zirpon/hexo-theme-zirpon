@@ -34,6 +34,9 @@
                         <% } %>
                     <% }); %>
                     
+          <% if(config.search){ %>
+          <li><a class="popup-trigger" title="Search"><span class="search-icon"></span>Search</a></li>
+          <% } %>
                 </ul>
             </div>
         </div>
@@ -41,6 +44,12 @@
     </div>
     <!-- /.container -->
 </nav>
+<!-- progress -->
+<div id="progress">
+  <div class="line" style="width: 0%;"></div>
+</div>
+
+
 <script>
     // Drop Bootstarp low-performance Navbar
     // Use customize navbar with high-quality material design animation

@@ -2,9 +2,6 @@
 layout: layout
 ---
 
-<!-- Image to hack wechat -->
-<!-- <img src="<%= config['url'] %><%= config['root'] %>img/icon_wechat.png" width="0" height="0"> -->
-<!-- <img src="{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}" width="0" height="0"> -->
 
 <!-- Post Header -->
 <style type="text/css">
@@ -20,7 +17,7 @@ layout: layout
     }
 </style>
 <header class="intro-header" >
-    <iframe src="<%= page.iframe %>"/>
+    <iframe src="<%= page.iframe %>" >
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
@@ -68,7 +65,7 @@ layout: layout
                     data-thread-key="<%= page.path %>"
                     data-title="<%= page.title %>"
                     data-url="<%= page.permalink %>"
-                    data-images="<%= config.url %><%= config.root %><%= page["header-img"] || config["header-img"] %>"
+                    data-images="<%= config.root %><%= page["header-img"] || config["header-img"] %>"
                     data-content="<%- truncate(strip_html(page.content), {length: 50, omission: '...'}) %> | <%= config.SEOTitle %> " >
                     <div class="ds-share-inline">
                       <ul  class="ds-share-icons-16">
@@ -159,7 +156,7 @@ layout: layout
 <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 <script type="text/javascript">
     // dynamic User by Hux
-    var _user = '<%= config['duoshuo_username'] %>';
+    var _user = "<%= config['duoshuo_username'] %>";
 
     // duoshuo comment query.
     var duoshuoQuery = {short_name: _user };

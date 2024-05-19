@@ -1,16 +1,16 @@
 ---
-title: "mysql 8.0 note"
+title: "MySQL 8.0 note"
 catalog: true
 date: 2018-11-28 19:43:16
-subtitle: ""
-header-img: "Demo.png"
+subtitle: "The quick brown fox jumps over the lazy dog"
+header-img: "img/header_img/roman.png"
 tags:
 - mysql database
 catagories:
 - mysql
 ---
 
-# mysql 8.0 note
+## mysql 8.0 安装 note
 
 我真的佛了 今天装个mysql 8.0 各种坑 好像不支持 设置set password= password("123456") 这样的写法 各种报错
 要

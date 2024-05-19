@@ -1,10 +1,12 @@
 @media (min-width: 1200px) {
   .post-container,
+  .article-container,
   .sidebar-container {
     padding-right: 5%;
   }
 }
 @media (min-width: 768px) {
+  .article-container,
   .post-container {
     padding-right: 5%;
   }
@@ -159,6 +161,76 @@ pre code {
   white-space: pre;
   word-wrap: normal;
 }
+
+.article-container {
+  width: 85%;
+  margin-left: 0px;
+}
+.article-container a {
+  color: #337ab7;
+}
+.article-container a:hover,
+.article-container a:focus {
+  color: #0085a1;
+}
+.article-container h1
+.article-container h2,
+.article-container h3,
+.article-container h4,
+.article-container h5,
+.article-container h6 {
+  margin: 30px 0 10px;
+  color: inherit;
+}
+.article-container h5 {
+  font-size: 19px;
+  font-weight: 600;
+  color: gray;
+}
+.article-container h5 + p {
+  margin-top: 5px;
+}
+.article-container h6 {
+  font-size: 16px;
+  font-weight: 600;
+  color: gray;
+}
+.article-container h6 + p {
+  margin-top: 5px;
+}
+.article-container ul,
+.article-container ol {
+  margin-bottom: 40px;
+}
+.article-container ol ol,
+.article-container ol ul,
+.article-container ul ol,
+.article-container ul ul {
+  margin-bottom: 5px;
+}
+.article-container li p {
+  margin: 0;
+  margin-bottom: 5px;
+}
+.article-container li h1,
+.article-container li h2,
+.article-container li h3,
+.article-container li h4,
+.article-container li h5,
+.article-container li h6 {
+  line-height: 2;
+  margin-top: 20px;
+}
+.article-container .tags a {
+  color: gray;
+  border-color: gray;
+}
+.article-container .tags a:hover,
+.article-container .tags a:active {
+  color: #0085a1;
+  border-color: #0085a1;
+}
+
 .post-container a {
   color: #337ab7;
 }
@@ -195,12 +267,16 @@ pre code {
   margin-bottom: 40px;
 }
 @media screen and (max-width: 768px) {
+  .article-container ul,
+  .article-container ol,
   .post-container ul,
   .post-container ol {
     padding-left: 30px;
   }
 }
 @media screen and (max-width: 500px) {
+  .article-container ul,
+  .article-container ol,
   .post-container ul,
   .post-container ol {
     padding-left: 20px;
@@ -286,6 +362,12 @@ pre code {
     opacity: 1;
   }
 }
+
+/* themeColor */
+i.mdui-icon.material-icons.bright-mode {
+  display: none;
+}
+
 .navbar-custom {
   background: none;
   border: none;
@@ -491,6 +573,12 @@ pre code {
   font-weight: 300;
   font-size: 18px;
 }
+
+.blank_box {
+  width: 100%;
+  height: 10px;
+}
+
 .intro-header .post-heading .meta a {
   color: white;
 }
@@ -874,12 +962,17 @@ body {
 }
 /* Tags support End*/
 /* Hux make all img responsible in post-container */
+.article-container img,
 .post-container img {
   display: block;
   max-width: 100%;
   height: auto;
   margin: 1.5em auto 1.6em auto;
+  box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);
+  -moz-box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);
+  -webkit-box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);
 }
+
 /* Hux Optimize UserExperience */
 .navbar-default .navbar-toggle:focus,
 .navbar-default .navbar-toggle:hover {
@@ -975,4 +1068,28 @@ body {
 }
 .page-fullscreen footer .copyright a:hover {
   color: #ddd;
+}
+
+.markdown-body .highlight pre, .markdown-body pre {
+  padding: 16px !important;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  color: black !important
+}
+
+/* rocket */
+@media only screen and (max-width: 768px) {
+  #rocket {
+    right: 25px !important;
+  }
+}
+
+#rocket {
+  right: 47px;
 }

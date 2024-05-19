@@ -5,24 +5,33 @@
 <%- partial('_partial/head') %>
 
 <!-- hack iOS CSS :active style -->
-<body ontouchstart="">
+<body ontouchstart="" class="body--home">
+
+    <!-- ThemeColor -->
+	<% if (config.themecolor) { %>
+    <%- partial('_partial/themecolor') %>
+    <% } %>
+
 	<%- partial('_partial/header',{cache: true}) %>
-	
+    
+    <!-- Navigation (contains search)-->
     <%- partial('_partial/nav',{cache: true}) %>
 
     <!-- Main Content -->
     <%- body %>
 
-    <!-- Footer -->
+	<!-- Footer (contains ThemeColor、viewer) -->
     <%- partial('_partial/footer') %>
 
+    <!-- Search -->
+	<% if (config.search) { %>
+        <%- partial('_partial/search') %>
+    <% } %>
 
-	<a id="rocket" href="#top" class=""></a>
-	<script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
-    <script type="text/javascript" src="/js/toc.js?v=1.0.0" async=""></script>
-<!-- Image to hack wechat -->
-<img src="<%= config['url'] %><%= config['root'] %>img/icon_wechat.png" width="0" height="0" />
-<!-- Migrate from head to bottom, no longer block render and still work -->
+    <a id="rocket" href="#top" class=""></a>
+	<script type="text/javascript" src="<%= config.url%><%= config.root%>js/totop.js?v=1.0.0" async=""></script>
+    <script type="text/javascript" src="<%= config.url%><%= config.root%>js/toc.js?v=1.0.0" async=""></script>
+    <!-- Migrate from head to bottom, no longer block render and still work -->
 
 </body>
 
