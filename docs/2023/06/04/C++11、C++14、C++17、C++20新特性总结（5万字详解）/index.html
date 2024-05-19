@@ -133,7 +133,7 @@
 <style type="text/css">
     header.intro-header{
         
-            background-image: url('http://yoursite.com/undefined')
+            background-image: url('https://zirpon.github.io/undefined')
             /*post*/
         
     }
@@ -322,373 +322,274 @@
 <h1>C<ins>11、C</ins>14、C<ins>17、C</ins>20新特性总结（5万字详解）</h1>
 <h2 id="文章目录"><a class="header-anchor" href="#文章目录">¶</a>文章目录</h2>
 <ul>
-<li><a href="#C_11C_11_2">C++ 11是什么，C++ 11标准的由来</a></li>
-<li><a href="#C_auto_37">C++ auto类型推导完全攻略</a></li>
-<li>
+<li><a href="#c11c14c17c20%E6%96%B0%E7%89%B9%E6%80%A7%E6%80%BB%E7%BB%935%E4%B8%87%E5%AD%97%E8%AF%A6%E8%A7%A3">C<ins>11、C</ins>14、C<ins>17、C</ins>20新特性总结（5万字详解）</a>
 <ul>
-<li><a href="#auto__43">auto 类型推导的语法和规则</a></li>
-<li><a href="#auto__83">auto 的高级用法</a></li>
-<li><a href="#auto__126">auto 的限制</a></li>
-<li><a href="#auto__156">auto 的应用</a></li>
-<li>
+<li><a href="#%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95">文章目录</a>
 <ul>
-<li>
+<li><a href="#c-11%E6%98%AF%E4%BB%80%E4%B9%88c-11%E6%A0%87%E5%87%86%E7%9A%84%E7%94%B1%E6%9D%A5">C++ 11是什么，C++ 11标准的由来</a></li>
+<li><a href="#c-auto%E7%B1%BB%E5%9E%8B%E6%8E%A8%E5%AF%BC%E5%AE%8C%E5%85%A8%E6%94%BB%E7%95%A5">C++ auto类型推导完全攻略</a>
 <ul>
-<li><a href="#_auto__160">使用 auto 定义迭代器</a></li>
-<li><a href="#auto__192">auto 用于泛型编程</a></li>
+<li><a href="#auto-%E7%B1%BB%E5%9E%8B%E6%8E%A8%E5%AF%BC%E7%9A%84%E8%AF%AD%E6%B3%95%E5%92%8C%E8%A7%84%E5%88%99">auto 类型推导的语法和规则</a></li>
+<li><a href="#auto-%E7%9A%84%E9%AB%98%E7%BA%A7%E7%94%A8%E6%B3%95">auto 的高级用法</a></li>
+<li><a href="#auto-%E7%9A%84%E9%99%90%E5%88%B6">auto 的限制</a></li>
+<li><a href="#auto-%E7%9A%84%E5%BA%94%E7%94%A8">auto 的应用</a></li>
+<li><a href="#%E4%BD%BF%E7%94%A8-auto-%E5%AE%9A%E4%B9%89%E8%BF%AD%E4%BB%A3%E5%99%A8">使用 auto 定义迭代器</a></li>
+<li><a href="#auto-%E7%94%A8%E4%BA%8E%E6%B3%9B%E5%9E%8B%E7%BC%96%E7%A8%8B">auto 用于泛型编程</a></li>
 </ul>
 </li>
 </ul>
 </li>
+<li><a href="#c-decltype%E7%B1%BB%E5%9E%8B%E6%8E%A8%E5%AF%BC%E5%AE%8C%E5%85%A8%E6%94%BB%E7%95%A5">C++ decltype类型推导完全攻略</a>
+<ul>
+<li><a href="#exp-%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9">exp 注意事项</a></li>
 </ul>
 </li>
-<li><a href="#C_decltype_262">C++ decltype类型推导完全攻略</a></li>
-<li>
+<li><a href="#decltype-%E6%8E%A8%E5%AF%BC%E8%A7%84%E5%88%99">decltype 推导规则</a></li>
+<li><a href="#decltype-%E7%9A%84%E5%AE%9E%E9%99%85%E5%BA%94%E7%94%A8">decltype 的实际应用</a></li>
+<li><a href="#%E6%B1%87%E6%80%BBauto%E5%92%8Cdecltype%E7%9A%84%E5%8C%BA%E5%88%AB">汇总auto和decltype的区别</a>
 <ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#exp__283">exp 注意事项</a></li>
+<li><a href="#%E8%AF%AD%E6%B3%95%E6%A0%BC%E5%BC%8F%E7%9A%84%E5%8C%BA%E5%88%AB">语法格式的区别</a></li>
+<li><a href="#%E5%AF%B9-cv-%E9%99%90%E5%AE%9A%E7%AC%A6%E7%9A%84%E5%A4%84%E7%90%86">对 cv 限定符的处理</a></li>
+<li><a href="#%E5%AF%B9%E5%BC%95%E7%94%A8%E7%9A%84%E5%A4%84%E7%90%86">对引用的处理</a></li>
+<li><a href="#%E6%80%BB%E7%BB%93">总结</a></li>
 </ul>
 </li>
+<li><a href="#c%E8%BF%94%E5%9B%9E%E5%80%BC%E7%B1%BB%E5%9E%8B%E5%90%8E%E7%BD%AE%E8%B7%9F%E8%B8%AA%E8%BF%94%E5%9B%9E%E5%80%BC%E7%B1%BB%E5%9E%8B">C++返回值类型后置（跟踪返回值类型）</a></li>
+<li><a href="#c11%E5%AF%B9%E6%A8%A1%E6%9D%BF%E5%AE%9E%E4%BE%8B%E5%8C%96%E4%B8%AD%E8%BF%9E%E7%BB%AD%E5%8F%B3%E5%B0%96%E6%8B%AC%E5%8F%B7%E7%9A%84%E6%94%B9%E8%BF%9B">C++11对模板实例化中连续右尖括号&gt;&gt;的改进</a>
+<ul>
+<li><a href="#%E6%89%A9%E5%B1%95%E9%98%85%E8%AF%BB">扩展阅读</a></li>
 </ul>
 </li>
-<li><a href="#decltype__298">decltype 推导规则</a></li>
-<li><a href="#decltype__379">decltype 的实际应用</a></li>
-</ul>
-</li>
-<li><a href="#autodecltype_426">汇总auto和decltype的区别</a></li>
-<li>
+<li><a href="#c11%E4%BD%BF%E7%94%A8using%E5%AE%9A%E4%B9%89%E5%88%AB%E5%90%8D%E6%9B%BF%E4%BB%A3typedef">C++11使用using定义别名（替代typedef）</a></li>
+<li><a href="#c11%E6%94%AF%E6%8C%81%E5%87%BD%E6%95%B0%E6%A8%A1%E6%9D%BF%E7%9A%84%E9%BB%98%E8%AE%A4%E6%A8%A1%E6%9D%BF%E5%8F%82%E6%95%B0">C++11支持函数模板的默认模板参数</a></li>
+<li><a href="#c11%E5%9C%A8%E5%87%BD%E6%95%B0%E6%A8%A1%E6%9D%BF%E5%92%8C%E7%B1%BB%E6%A8%A1%E6%9D%BF%E4%B8%AD%E4%BD%BF%E7%94%A8%E5%8F%AF%E5%8F%98%E5%8F%82%E6%95%B0">C++11在函数模板和类模板中使用可变参数</a>
 <ul>
-<li><a href="#_430">语法格式的区别</a></li>
-<li><a href="#_cv__462">对 cv 限定符的处理</a></li>
-<li><a href="#_501">对引用的处理</a></li>
-<li><a href="#_531">总结</a></li>
-</ul>
-</li>
-<li><a href="#C_547">C++返回值类型后置（跟踪返回值类型）</a></li>
-<li><a href="#C11_627">C++11对模板实例化中连续右尖括号&gt;&gt;的改进</a></li>
-<li>
+<li><a href="#%E5%8F%AF%E5%8F%98%E5%8F%82%E6%95%B0%E6%A8%A1%E6%9D%BF">可变参数模板</a>
 <ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#_686">扩展阅读</a></li>
+<li><a href="#1-%E5%8F%AF%E5%8F%98%E5%8F%82%E6%95%B0%E5%87%BD%E6%95%B0%E6%A8%A1%E6%9D%BF">1) 可变参数函数模板</a></li>
+<li><a href="#2-%E5%8F%AF%E5%8F%98%E5%8F%82%E6%95%B0%E7%B1%BB%E6%A8%A1%E6%9D%BF">2) 可变参数类模板</a></li>
 </ul>
 </li>
 </ul>
 </li>
+<li><a href="#c11-tuple%E5%85%83%E7%BB%84%E8%AF%A6%E8%A7%A3">C++11 tuple元组详解</a>
+<ul>
+<li><a href="#tuple%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%88%9B%E5%BB%BA">tuple对象的创建</a>
+<ul>
+<li><a href="#1-%E7%B1%BB%E7%9A%84%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0">1) 类的构造函数</a></li>
+<li><a href="#2-make_tuple%E5%87%BD%E6%95%B0">2) make_tuple()函数</a></li>
 </ul>
 </li>
-<li><a href="#C11usingtypedef_692">C++11使用using定义别名（替代typedef）</a></li>
-<li><a href="#C11_803">C++11支持函数模板的默认模板参数</a></li>
-<li><a href="#C11_878">C++11在函数模板和类模板中使用可变参数</a></li>
-<li>
-<ul>
-<li><a href="#_919">可变参数模板</a></li>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#1__923">1) 可变参数函数模板</a></li>
-<li><a href="#2__1020">2) 可变参数类模板</a></li>
+<li><a href="#tuple%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B0">tuple常用函数</a></li>
 </ul>
 </li>
+<li><a href="#c11%E5%88%97%E8%A1%A8%E5%88%9D%E5%A7%8B%E5%8C%96%E7%BB%9F%E4%B8%80%E4%BA%86%E5%88%9D%E5%A7%8B%E5%8C%96%E6%96%B9%E5%BC%8F">C++11列表初始化（统一了初始化方式）</a>
+<ul>
+<li><a href="#%E7%BB%9F%E4%B8%80%E7%9A%84%E5%88%9D%E5%A7%8B%E5%8C%96">统一的初始化</a></li>
 </ul>
 </li>
-</ul>
-</li>
-<li><a href="#C11_tuple_1076">C++11 tuple元组详解</a></li>
-<li>
+<li><a href="#c11-lambda%E5%8C%BF%E5%90%8D%E5%87%BD%E6%95%B0%E7%94%A8%E6%B3%95%E8%AF%A6%E8%A7%A3">C++11 lambda匿名函数用法详解</a>
 <ul>
-<li><a href="#tuple_1084">tuple对象的创建</a></li>
-<li>
+<li><a href="#lambda%E5%8C%BF%E5%90%8D%E5%87%BD%E6%95%B0%E7%9A%84%E5%AE%9A%E4%B9%89">lambda匿名函数的定义</a>
 <ul>
-<li>
-<ul>
-<li><a href="#1__1095">1) 类的构造函数</a></li>
-<li><a href="#2_make_tuple_1141">2) make_tuple()函数</a></li>
+<li><a href="#lambda%E5%8C%BF%E5%90%8D%E5%87%BD%E6%95%B0%E4%B8%AD%E7%9A%84%E5%A4%96%E9%83%A8%E5%8F%98%E9%87%8F">lambda匿名函数中的[外部变量]</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#tuple_1155">tuple常用函数</a></li>
+<li><a href="#c11%E9%9D%9E%E5%8F%97%E9%99%90%E8%81%94%E5%90%88%E4%BD%93union">C++11非受限联合体（union）</a>
+<ul>
+<li><a href="#1-c11-%E5%85%81%E8%AE%B8%E9%9D%9E-pod-%E7%B1%BB%E5%9E%8B">1. C++11 允许非 POD 类型</a></li>
+<li><a href="#2-c11-%E5%85%81%E8%AE%B8%E8%81%94%E5%90%88%E4%BD%93%E6%9C%89%E9%9D%99%E6%80%81%E6%88%90%E5%91%98">2. C++11 允许联合体有静态成员</a></li>
 </ul>
 </li>
-<li><a href="#C11_1213">C++11列表初始化（统一了初始化方式）</a></li>
-<li>
+<li><a href="#%E9%9D%9E%E5%8F%97%E9%99%90%E8%81%94%E5%90%88%E4%BD%93%E7%9A%84%E8%B5%8B%E5%80%BC%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9">非受限联合体的赋值注意事项</a>
 <ul>
-<li><a href="#_1247">统一的初始化</a></li>
+<li><a href="#placement-new-%E6%98%AF%E4%BB%80%E4%B9%88">placement new 是什么？</a></li>
 </ul>
 </li>
-<li><a href="#C11_lambda_1341">C++11 lambda匿名函数用法详解</a></li>
-<li>
+<li><a href="#%E9%9D%9E%E5%8F%97%E9%99%90%E8%81%94%E5%90%88%E4%BD%93%E7%9A%84%E5%8C%BF%E5%90%8D%E5%A3%B0%E6%98%8E%E5%92%8C%E6%9E%9A%E4%B8%BE%E5%BC%8F%E7%B1%BB">非受限联合体的匿名声明和“枚举式类”</a></li>
+<li><a href="#c11-for%E5%BE%AA%E7%8E%AF%E5%9F%BA%E4%BA%8E%E8%8C%83%E5%9B%B4%E7%9A%84%E5%BE%AA%E7%8E%AF%E8%AF%A6%E8%A7%A3">C++11 for循环（基于范围的循环）详解</a></li>
+<li><a href="#c11-for%E5%BE%AA%E7%8E%AF%E4%BD%BF%E7%94%A8%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9">C++11 for循环使用注意事项</a></li>
+<li><a href="#c11-constexpr%E9%AA%8C%E8%AF%81%E6%98%AF%E5%90%A6%E4%B8%BA%E5%B8%B8%E9%87%8F%E8%A1%A8%E8%BE%BE%E5%BC%8F%E9%95%BF%E7%AF%87%E7%A5%9E%E6%96%87">C++11 constexpr：验证是否为常量表达式（长篇神文）</a>
 <ul>
-<li><a href="#lambda_1347">lambda匿名函数的定义</a></li>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#lambda_1392">lambda匿名函数中的[外部变量]</a></li>
+<li><a href="#constexpr%E4%BF%AE%E9%A5%B0%E6%99%AE%E9%80%9A%E5%8F%98%E9%87%8F">constexpr修饰普通变量</a></li>
+<li><a href="#constexpr%E4%BF%AE%E9%A5%B0%E5%87%BD%E6%95%B0">constexpr修饰函数</a></li>
+<li><a href="#constexpr%E4%BF%AE%E9%A5%B0%E7%B1%BB%E7%9A%84%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0">constexpr修饰类的构造函数</a></li>
+<li><a href="#constexpr%E4%BF%AE%E9%A5%B0%E6%A8%A1%E6%9D%BF%E5%87%BD%E6%95%B0">constexpr修饰模板函数</a></li>
 </ul>
 </li>
+<li><a href="#c11-constexpr%E5%92%8Cconst%E7%9A%84%E5%8C%BA%E5%88%AB">C++11 constexpr和const的区别</a></li>
+<li><a href="#c11-long-long%E8%B6%85%E9%95%BF%E6%95%B4%E5%BD%A2%E8%AF%A6%E8%A7%A3">C++11 long long超长整形详解</a></li>
+<li><a href="#c11%E5%8F%B3%E5%80%BC%E5%BC%95%E7%94%A8%E4%B8%80%E7%9C%8B%E5%8D%B3%E6%87%82">C++11右值引用（一看即懂）</a>
+<ul>
+<li><a href="#c%E5%B7%A6%E5%80%BC%E5%92%8C%E5%8F%B3%E5%80%BC">C++左值和右值</a></li>
+<li><a href="#c%E5%8F%B3%E5%80%BC%E5%BC%95%E7%94%A8">C++右值引用</a></li>
 </ul>
 </li>
+<li><a href="#c11%E7%A7%BB%E5%8A%A8%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E7%9A%84%E5%8A%9F%E8%83%BD%E5%92%8C%E7%94%A8%E6%B3%95">C++11移动构造函数的功能和用法</a>
+<ul>
+<li><a href="#c11%E7%A7%BB%E5%8A%A8%E8%AF%AD%E4%B9%89%E6%98%AF%E4%BB%80%E4%B9%88">C++11移动语义是什么</a></li>
+<li><a href="#c%E7%A7%BB%E5%8A%A8%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E7%A7%BB%E5%8A%A8%E8%AF%AD%E4%B9%89%E7%9A%84%E5%85%B7%E4%BD%93%E5%AE%9E%E7%8E%B0">C++移动构造函数（移动语义的具体实现）</a></li>
 </ul>
 </li>
-<li><a href="#C11union_1602">C++11非受限联合体（union）</a></li>
-<li>
+<li><a href="#c11-move%E5%87%BD%E6%95%B0%E5%B0%86%E5%B7%A6%E5%80%BC%E5%BC%BA%E5%88%B6%E8%BD%AC%E6%8D%A2%E4%B8%BA%E5%8F%B3%E5%80%BC">C++11 move()函数：将左值强制转换为右值</a></li>
+<li><a href="#c11%E5%BC%95%E7%94%A8%E9%99%90%E5%AE%9A%E7%AC%A6%E7%9A%84%E7%94%A8%E6%B3%95">C++11引用限定符的用法</a>
 <ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#1_C11__POD__1631">1. C++11 允许非 POD 类型</a></li>
-<li><a href="#2_C11__1670">2. C++11 允许联合体有静态成员</a></li>
+<li><a href="#const%E5%92%8C%E5%BC%95%E7%94%A8%E9%99%90%E5%AE%9A%E7%AC%A6">const和引用限定符</a></li>
 </ul>
 </li>
-</ul>
-</li>
-<li><a href="#_1685">非受限联合体的赋值注意事项</a></li>
-<li>
+<li><a href="#c11%E5%AE%8C%E7%BE%8E%E8%BD%AC%E5%8F%91%E5%8F%8A%E5%85%B6%E5%AE%9E%E7%8E%B0">C++11完美转发及其实现</a></li>
+<li><a href="#c11-nullptr%E5%88%9D%E5%A7%8B%E5%8C%96%E7%A9%BA%E6%8C%87%E9%92%88">C++11 nullptr：初始化空指针</a></li>
+<li><a href="#c11-shared_ptr%E6%99%BA%E8%83%BD%E6%8C%87%E9%92%88%E8%B6%85%E7%BA%A7%E8%AF%A6%E7%BB%86">C++11 shared_ptr智能指针（超级详细）</a>
 <ul>
-<li>
+<li><a href="#c11-shared_ptr%E6%99%BA%E8%83%BD%E6%8C%87%E9%92%88">C++11 shared_ptr智能指针</a>
 <ul>
-<li><a href="#placement_new__1726">placement new 是什么？</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#_1738">非受限联合体的匿名声明和“枚举式类”</a></li>
-</ul>
-</li>
-<li><a href="#C11_for_1789">C++11 for循环（基于范围的循环）详解</a></li>
-<li><a href="#C11_for_1924">C++11 for循环使用注意事项</a></li>
-<li><a href="#C11_constexpr_2129">C++11 constexpr：验证是否为常量表达式（长篇神文）</a></li>
-<li>
-<ul>
-<li><a href="#constexpr_2159">constexpr修饰普通变量</a></li>
-<li><a href="#constexpr_2191">constexpr修饰函数</a></li>
-<li><a href="#constexpr_2295">constexpr修饰类的构造函数</a></li>
-<li><a href="#constexpr_2386">constexpr修饰模板函数</a></li>
-</ul>
-</li>
-<li><a href="#C11_constexprconst_2431">C++11 constexpr和const的区别</a></li>
-<li><a href="#C11_long_long_2519">C++11 long long超长整形详解</a></li>
-<li><a href="#C11_2596">C++11右值引用（一看即懂）</a></li>
-<li>
-<ul>
-<li><a href="#C_2602">C++左值和右值</a></li>
-<li><a href="#C_2629">C++右值引用</a></li>
-</ul>
-</li>
-<li><a href="#C11_2700">C++11移动构造函数的功能和用法</a></li>
-<li>
-<ul>
-<li><a href="#C11_2704">C++11移动语义是什么</a></li>
-<li><a href="#C_2769">C++移动构造函数（移动语义的具体实现）</a></li>
-</ul>
-</li>
-<li><a href="#C11_move_2834">C++11 move()函数：将左值强制转换为右值</a></li>
-<li><a href="#C11_2945">C++11引用限定符的用法</a></li>
-<li>
-<ul>
-<li><a href="#const_3025">const和引用限定符</a></li>
-</ul>
-</li>
-<li><a href="#C11_3073">C++11完美转发及其实现</a></li>
-<li><a href="#C11_nullptr_3205">C++11 nullptr：初始化空指针</a></li>
-<li><a href="#C11_shared_ptr_3299">C++11 shared_ptr智能指针（超级详细）</a></li>
-<li>
-<ul>
-<li><a href="#C11_shared_ptr_3320">C++11 shared_ptr智能指针</a></li>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#1shared_ptr_3333">1、shared_ptr智能指针的创建</a></li>
-<li><a href="#2shared_ptrT_3410">2、shared_ptr模板类提供的成员方法</a></li>
+<li><a href="#1shared_ptr%E6%99%BA%E8%83%BD%E6%8C%87%E9%92%88%E7%9A%84%E5%88%9B%E5%BB%BA">1、shared_ptr智能指针的创建</a></li>
+<li><a href="#2shared_ptr%E6%A8%A1%E6%9D%BF%E7%B1%BB%E6%8F%90%E4%BE%9B%E7%9A%84%E6%88%90%E5%91%98%E6%96%B9%E6%B3%95">2、shared_ptr模板类提供的成员方法</a></li>
 </ul>
 </li>
 </ul>
 </li>
+<li><a href="#c11-unique_ptr%E6%99%BA%E8%83%BD%E6%8C%87%E9%92%88">C++11 unique_ptr智能指针</a>
+<ul>
+<li><a href="#unique_ptr%E6%99%BA%E8%83%BD%E6%8C%87%E9%92%88%E7%9A%84%E5%88%9B%E5%BB%BA">unique_ptr智能指针的创建</a></li>
+<li><a href="#unique_ptr%E6%A8%A1%E6%9D%BF%E7%B1%BB%E6%8F%90%E4%BE%9B%E7%9A%84%E6%88%90%E5%91%98%E6%96%B9%E6%B3%95">unique_ptr模板类提供的成员方法</a></li>
 </ul>
 </li>
-<li><a href="#C11_unique_ptr_3466">C++11 unique_ptr智能指针</a></li>
-<li>
+<li><a href="#c11-weak_ptr%E6%99%BA%E8%83%BD%E6%8C%87%E9%92%88">C++11 weak_ptr智能指针</a>
 <ul>
-<li><a href="#unique_ptr_3483">unique_ptr智能指针的创建</a></li>
-<li><a href="#unique_ptrT_3530">unique_ptr模板类提供的成员方法</a></li>
-</ul>
-</li>
-<li><a href="#C11_weak_ptr_3586">C++11 weak_ptr智能指针</a></li>
-<li>
+<li><a href="#c11-weak_ptr%E6%99%BA%E8%83%BD%E6%8C%87%E9%92%88-1">C++11 weak_ptr智能指针</a>
 <ul>
-<li><a href="#C11_weak_ptr_3593">C++11 weak_ptr智能指针</a></li>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#1weak_ptr_3610">1、weak_ptr指针的创建</a></li>
-<li><a href="#2_weak_ptr_3637">2) weak_ptr模板类提供的成员方法</a></li>
+<li><a href="#1weak_ptr%E6%8C%87%E9%92%88%E7%9A%84%E5%88%9B%E5%BB%BA">1、weak_ptr指针的创建</a></li>
+<li><a href="#2-weak_ptr%E6%A8%A1%E6%9D%BF%E7%B1%BB%E6%8F%90%E4%BE%9B%E7%9A%84%E6%88%90%E5%91%98%E6%96%B9%E6%B3%95">2) weak_ptr模板类提供的成员方法</a></li>
 </ul>
 </li>
 </ul>
 </li>
+<li><a href="#c14-%E6%96%B0%E7%89%B9%E6%80%A7%E6%80%BB%E7%BB%93">C++14 新特性总结</a>
+<ul>
+<li><a href="#%E5%87%BD%E6%95%B0%E8%BF%94%E5%9B%9E%E5%80%BC%E7%B1%BB%E5%9E%8B%E6%8E%A8%E5%AF%BC">函数返回值类型推导</a></li>
+<li><a href="#lambda%E5%8F%82%E6%95%B0auto">lambda参数auto</a></li>
+<li><a href="#%E5%8F%98%E9%87%8F%E6%A8%A1%E6%9D%BF">变量模板</a></li>
+<li><a href="#%E5%88%AB%E5%90%8D%E6%A8%A1%E6%9D%BF">别名模板</a></li>
+<li><a href="#constexpr%E7%9A%84%E9%99%90%E5%88%B6">constexpr的限制</a></li>
+<li><a href="#deprecated%E6%A0%87%E8%AE%B0">[[<code>deprecated</code>]]标记</a></li>
+<li><a href="#%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%AD%97%E9%9D%A2%E9%87%8F%E4%B8%8E%E6%95%B4%E5%BD%A2%E5%AD%97%E9%9D%A2%E9%87%8F%E5%88%86%E9%9A%94%E7%AC%A6">二进制字面量与整形字面量分隔符</a></li>
+<li><a href="#stdmake_unique">std::make_unique</a></li>
+<li><a href="#stdshared_timed_mutex%E4%B8%8Estdshared_lock">std::shared_timed_mutex与std::shared_lock</a></li>
+<li><a href="#stdinteger_sequence">std::integer_sequence</a></li>
+<li><a href="#stdexchange">std::exchange</a></li>
+<li><a href="#stdquoted">std::quoted</a></li>
 </ul>
 </li>
-<li><a href="#C14__3685">C++14 新特性总结</a></li>
-<li>
+<li><a href="#c17%E6%96%B0%E7%89%B9%E6%80%A7%E6%80%BB%E7%BB%93">C++17新特性总结</a>
 <ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#_3689">函数返回值类型推导</a></li>
-<li><a href="#lambdaauto_3786">lambda参数auto</a></li>
-<li><a href="#_3802">变量模板</a></li>
-<li><a href="#_3817">别名模板</a></li>
-<li><a href="#constexpr_3841">constexpr的限制</a></li>
-<li><a href="#deprecated_3882">[[`deprecated`]]标记</a></li>
-<li><a href="#_3907">二进制字面量与整形字面量分隔符</a></li>
-<li><a href="#stdmake_unique_3916">std::make_unique</a></li>
-<li><a href="#stdshared_timed_mutexstdshared_lock_3925">std::shared_timed_mutex与std::shared_lock</a></li>
-<li><a href="#stdinteger_sequence_3954">std::integer_sequence</a></li>
-<li><a href="#stdexchange_3992">std::exchange</a></li>
-<li><a href="#stdquoted_4023">std::quoted</a></li>
+<li><a href="#%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E6%A8%A1%E6%9D%BF%E6%8E%A8%E5%AF%BC">构造函数模板推导</a></li>
+<li><a href="#%E7%BB%93%E6%9E%84%E5%8C%96%E7%BB%91%E5%AE%9A">结构化绑定</a></li>
+<li><a href="#if-switch%E8%AF%AD%E5%8F%A5%E5%88%9D%E5%A7%8B%E5%8C%96">if-switch语句初始化</a></li>
+<li><a href="#%E5%86%85%E8%81%94%E5%8F%98%E9%87%8F">内联变量</a></li>
+<li><a href="#%E6%8A%98%E5%8F%A0%E8%A1%A8%E8%BE%BE%E5%BC%8F">折叠表达式</a></li>
+<li><a href="#constexpr-lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F">constexpr lambda表达式</a></li>
+<li><a href="#namespace%E5%B5%8C%E5%A5%97">namespace嵌套</a></li>
+<li><a href="#__has_include%E9%A2%84%E5%A4%84%E7%90%86%E8%A1%A8%E8%BE%BE%E5%BC%8F">__has_include预处理表达式</a></li>
+<li><a href="#%E5%9C%A8lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%94%A8this%E6%8D%95%E8%8E%B7%E5%AF%B9%E8%B1%A1%E5%89%AF%E6%9C%AC">在lambda表达式用*this捕获对象副本</a></li>
+<li><a href="#%E6%96%B0%E5%A2%9Eattribute">新增Attribute</a></li>
+<li><a href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BD%AC%E6%8D%A2">字符串转换</a></li>
+<li><a href="#stdvariant">std::variant</a></li>
 </ul>
 </li>
+<li><a href="#stdoptional">std::optional</a>
+<ul>
+<li><a href="#stdany">std::any</a></li>
+<li><a href="#stdapply">std::apply</a></li>
+<li><a href="#stdmake_from_tuple">std::make_from_tuple</a></li>
+<li><a href="#stdstring_view">std::string_view</a></li>
+<li><a href="#as_const">as_const</a></li>
+<li><a href="#file_system">file_system</a></li>
+<li><a href="#stdshared_mutex">std::shared_mutex</a></li>
 </ul>
 </li>
+<li><a href="#c20-%E6%96%B0%E5%A2%9E%E7%89%B9%E6%80%A7%E6%80%BB%E7%BB%93">C++20 新增特性总结</a>
+<ul>
+<li><a href="#%E6%96%B0%E5%A2%9E%E5%85%B3%E9%94%AE%E5%AD%97keywords">新增关键字(keywords)</a></li>
+<li><a href="#%E6%96%B0%E5%A2%9E%E6%A0%87%E8%AF%86%E7%AC%A6identifies">新增标识符(Identifies)</a></li>
+<li><a href="#%E6%A8%A1%E5%9D%97modules">模块(Modules)</a>
+<ul>
+<li><a href="#%E4%BC%98%E7%82%B9">优点</a></li>
+<li><a href="#%E5%88%9B%E5%BB%BA%E6%A8%A1%E5%9D%97">创建模块</a></li>
+<li><a href="#%E5%BC%95%E7%94%A8%E6%A8%A1%E5%9D%97">引用模块</a></li>
+<li><a href="#import-%E5%A4%B4%E6%96%87%E4%BB%B6">import 头文件</a></li>
 </ul>
 </li>
-<li><a href="#C17_4045">C++17新特性总结</a></li>
-<li>
+<li><a href="#ranges">Ranges</a>
 <ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#_4072">构造函数模板推导</a></li>
-<li><a href="#_4087">结构化绑定</a></li>
-<li><a href="#ifswitch_4198">if-switch语句初始化</a></li>
-<li><a href="#_4226">内联变量</a></li>
-<li><a href="#_4243">折叠表达式</a></li>
-<li><a href="#constexpr_lambda_4258">constexpr lambda表达式</a></li>
-<li><a href="#namespace_4273">namespace嵌套</a></li>
-<li><a href="#__has_include_4290">__has_include预处理表达式</a></li>
-<li><a href="#lambdathis_4316">在lambda表达式用*this捕获对象副本</a></li>
-<li><a href="#Attribute_4356">新增Attribute</a></li>
-<li><a href="#_4418">字符串转换</a></li>
-<li><a href="#stdvariant_4447">std::variant</a></li>
+<li><a href="#%E4%BE%8B%E5%AD%90">例子</a></li>
 </ul>
 </li>
-<li><a href="#stdoptional_4489">std::optional</a></li>
-<li>
+<li><a href="#%E5%8D%8F%E7%A8%8Bcoroutines">协程(Coroutines)</a>
 <ul>
-<li><a href="#stdany_4525">std::any</a></li>
-<li><a href="#stdapply_4548">std::apply</a></li>
-<li><a href="#stdmake_from_tuple_4564">std::make_from_tuple</a></li>
-<li><a href="#stdstring_view_4580">std::string_view</a></li>
-<li><a href="#as_const_4598">as_const</a></li>
-<li><a href="#file_system_4607">file_system</a></li>
-<li><a href="#stdshared_mutex_4619">std::shared_mutex</a></li>
+<li><a href="#%E4%BB%80%E4%B9%88%E6%98%AF%E5%8D%8F%E7%A8%8B">什么是协程</a></li>
+<li><a href="#%E4%BE%8B%E5%AD%90vc">例子(VC++)</a></li>
 </ul>
 </li>
+<li><a href="#concepts">Concepts</a>
+<ul>
+<li><a href="#%E5%A6%82%E4%BD%95%E5%AE%9A%E4%B9%89">如何定义</a></li>
+<li><a href="#%E4%BD%BF%E7%94%A8">使用</a></li>
+<li><a href="#%E4%BE%8B%E5%AD%90-1">例子</a></li>
 </ul>
 </li>
+<li><a href="#lambda-%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%9A%84%E6%9B%B4%E6%96%B0">Lambda 表达式的更新</a>
+<ul>
+<li><a href="#-this-%E9%9C%80%E8%A6%81%E6%98%BE%E5%BC%8F%E6%8D%95%E8%8E%B7this%E5%8F%98%E9%87%8F">[=, this] 需要显式捕获<code>this</code>变量</a></li>
+<li><a href="#%E6%A8%A1%E6%9D%BF%E5%BD%A2%E5%BC%8F%E7%9A%84-lambda-%E8%A1%A8%E8%BE%BE%E5%BC%8F">模板形式的 Lambda 表达式</a></li>
+<li><a href="#lambda-%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%8D%95%E8%8E%B7%E6%94%AF%E6%8C%81%E6%89%93%E5%8C%85%E5%B1%95%E5%BC%80pack-expansion">Lambda 表达式捕获支持打包展开(Pack Expansion)</a></li>
 </ul>
 </li>
-<li><a href="#C20__4623">C++20 新增特性总结</a></li>
-<li>
+<li><a href="#%E5%B8%B8%E9%87%8F%E8%A1%A8%E8%BE%BE%E5%BC%8Fconstexpr-%E7%9A%84%E6%9B%B4%E6%96%B0">常量表达式(<code>constexpr</code>) 的更新</a>
 <ul>
-<li><a href="#keywords_4698">新增关键字(keywords)</a></li>
-<li><a href="#Identifies_4709">新增标识符(Identifies)</a></li>
-<li><a href="#Modules_4714">模块(Modules)</a></li>
-<li>
-<ul>
-<li><a href="#_4716">优点</a></li>
-<li><a href="#_4727">创建模块</a></li>
-<li><a href="#_4738">引用模块</a></li>
-<li><a href="#import__4748">import 头文件</a></li>
+<li><a href="#constexpr-string--vector"><code>constexpr</code> string &amp; vector</a></li>
 </ul>
 </li>
-<li><a href="#Ranges_4755">Ranges</a></li>
-<li>
+<li><a href="#%E5%8E%9F%E5%AD%90atomic%E6%99%BA%E8%83%BD%E6%8C%87%E9%92%88">原子(Atomic)智能指针</a>
 <ul>
-<li><a href="#_4782">例子</a></li>
+<li><a href="#%E4%BE%8B%E5%AD%90-2">例子</a></li>
 </ul>
 </li>
-<li><a href="#Coroutines_4822">协程(Coroutines)</a></li>
-<li>
+<li><a href="#%E8%87%AA%E5%8A%A8%E5%90%88%E6%B5%81joining-%E5%8F%AF%E4%B8%AD%E6%96%ADcancellable-%E7%9A%84%E7%BA%BF%E7%A8%8B">自动合流(Joining), 可中断(Cancellable) 的线程</a>
 <ul>
-<li><a href="#_4824">什么是协程</a></li>
-<li><a href="#VC_4848">例子(VC++)</a></li>
+<li><a href="#%E4%BE%8B%E5%AD%90-3">例子</a></li>
 </ul>
 </li>
-<li><a href="#Concepts_4868">Concepts</a></li>
-<li>
+<li><a href="#c20-%E5%90%8C%E6%AD%A5synchronization%E5%BA%93">C++20 同步(Synchronization)库</a>
 <ul>
-<li><a href="#_4874">如何定义</a></li>
-<li><a href="#_4880">使用</a></li>
-<li><a href="#_4895">例子</a></li>
+<li><a href="#stdatomic_ref">std::atomic_ref</a></li>
 </ul>
 </li>
-<li><a href="#Lambda__4919">Lambda 表达式的更新</a></li>
-<li>
+<li><a href="#%E5%85%B6%E4%BB%96%E6%9B%B4%E6%96%B0">其他更新</a>
 <ul>
-<li><a href="#_this_this_4921">[=, this] 需要显式捕获`this`变量</a></li>
-<li><a href="#_Lambda__4926">模板形式的 Lambda 表达式</a></li>
-<li><a href="#Lambda_Pack_Expansion_4993">Lambda 表达式捕获支持打包展开(Pack Expansion)</a></li>
+<li><a href="#%E6%8C%87%E5%AE%9A%E5%88%9D%E5%A7%8B%E5%8C%96designated-initializers">指定初始化(Designated Initializers)</a></li>
+<li><a href="#%E8%88%AA%E5%A4%A9%E9%A3%9E%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%AC%A6-">航天飞机操作符 &lt;=&gt;</a></li>
+<li><a href="#%E8%8C%83%E5%9B%B4-for-%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5%E6%94%AF%E6%8C%81%E5%88%9D%E5%A7%8B%E5%8C%96%E8%AF%AD%E5%8F%A5">范围 for 循环语句支持初始化语句</a></li>
+<li><a href="#%E9%9D%9E%E7%B1%BB%E5%9E%8B%E6%A8%A1%E6%9D%BF%E5%BD%A2%E5%8F%82%E6%94%AF%E6%8C%81%E5%AD%97%E7%AC%A6%E4%B8%B2">非类型模板形参支持字符串</a></li>
+<li><a href="#likely-unlikely">[[likely]], [[unlikely]]</a></li>
+<li><a href="#%E6%97%A5%E5%8E%86calendar%E5%92%8C%E6%97%B6%E5%8C%BAtimezone%E5%8A%9F%E8%83%BD">日历(Calendar)和时区(Timezone)功能</a></li>
+<li><a href="#stdspan">std::span</a></li>
+<li><a href="#%E7%89%B9%E6%80%A7%E6%B5%8B%E8%AF%95%E5%AE%8F">特性测试宏</a></li>
+<li><a href="#"></a></li>
+<li><a href="#consteval-%E5%87%BD%E6%95%B0"><code>consteval</code> 函数</a></li>
+<li><a href="#constinit"><code>constinit</code></a></li>
+<li><a href="#%E7%94%A8-using-%E5%BC%95%E7%94%A8-enum-%E7%B1%BB%E5%9E%8B">用 <code>using</code> 引用 <code>enum</code> 类型</a></li>
+<li><a href="#%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%BA%93stdformat">格式化库(<code>std::format</code>)</a></li>
+<li><a href="#%E5%A2%9E%E5%8A%A0%E6%95%B0%E5%AD%A6%E5%B8%B8%E9%87%8F">增加数学常量</a></li>
+<li><a href="#stdsource_location">std::source_location</a></li>
+<li><a href="#nodiscardreason">[[nodiscard(reason)]]</a></li>
+<li><a href="#%E4%BD%8D%E8%BF%90%E7%AE%97">位运算</a></li>
+<li><a href="#%E4%B8%80%E4%BA%9B%E5%B0%8F%E6%9B%B4%E6%96%B0">一些小更新</a></li>
+<li><a href="#%E7%9B%AE%E5%BD%95">目录</a></li>
 </ul>
 </li>
-<li><a href="#constexpr__5018">常量表达式(`constexpr`) 的更新</a></li>
-<li>
-<ul>
-<li><a href="#constexpr_string__vector_5039">`constexpr` string &amp; vector</a></li>
-</ul>
-</li>
-<li><a href="#Atomic_5044">原子(Atomic)智能指针</a></li>
-<li>
-<ul>
-<li><a href="#_5064">例子</a></li>
-</ul>
-</li>
-<li><a href="#Joining_Cancellable__5105">自动合流(Joining), 可中断(Cancellable) 的线程</a></li>
-<li>
-<ul>
-<li><a href="#_5136">例子</a></li>
-</ul>
-</li>
-<li><a href="#C20_Synchronization_5173">C++20 同步(Synchronization)库</a></li>
-<li>
-<ul>
-<li><a href="#stdatomic_ref_5228">std::atomic_ref</a></li>
-</ul>
-</li>
-<li><a href="#_5234">其他更新</a></li>
-<li>
-<ul>
-<li><a href="#Designated_Initializers_5236">指定初始化(Designated Initializers)</a></li>
-<li><a href="#__5246">航天飞机操作符 &lt;=&gt;</a></li>
-<li><a href="#_for__5309">范围 for 循环语句支持初始化语句</a></li>
-<li><a href="#_5364">非类型模板形参支持字符串</a></li>
-<li><a href="#likely_unlikely_5375">[[likely]], [[unlikely]]</a></li>
-<li><a href="#CalendarTimezone_5387">日历(Calendar)和时区(Timezone)功能</a></li>
-<li><a href="#stdspan_5471">std::span</a></li>
-<li><a href="#_5487">特性测试宏</a></li>
-<li><a href="#version_5504"></a></li>
-<li><a href="#consteval__5508">`consteval` 函数</a></li>
-<li><a href="#constinit_5512">`constinit`</a></li>
-<li><a href="#_using__enum__5529">用 `using` 引用 `enum` 类型</a></li>
-<li><a href="#stdformat_5561">格式化库(`std::format`)</a></li>
-<li><a href="#_5569">增加数学常量</a></li>
-<li><a href="#stdsource_location_5576">std::source_location</a></li>
-<li><a href="#nodiscardreason_5580">[[nodiscard(reason)]]</a></li>
-<li><a href="#_5589">位运算</a></li>
-<li><a href="#_5593">一些小更新</a></li>
 </ul>
 </li>
 </ul>
@@ -3716,7 +3617,7 @@ p5 is nullptr<br>
 <!-- chrome Firefox 中文锚点定位失效-->
 <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
 <!-- smooth scroll behavior polyfill  -->
-<script type="text/javascript" src="http://yoursite.com/js/smoothscroll.js"></script>
+<script type="text/javascript" src="https://zirpon.github.io/js/smoothscroll.js"></script>
 <script>
         $('#toc').on('click','a',function(a){
             // var isChrome = window.navigator.userAgent.indexOf("Chrome") !== -1;
@@ -3826,14 +3727,14 @@ p5 is nullptr<br>
 
 
 <!-- totop(rocket) -->
-<script type="text/javascript" async="true" src="http://yoursite.com/js/totop.js?v=1.0.0"></script>
+<script type="text/javascript" async="true" src="https://zirpon.github.io/js/totop.js?v=1.0.0"></script>
 
 <!-- Busuanzi JavaScript -->
 <script type="text/javascript" async="true" src="/js/busuanzi.pure.mini.js"></script>
 
 
     <!-- ThemeColor start -->
-    <script type="text/javascript" src="http://yoursite.com/js/themecolor.js"></script>
+    <script type="text/javascript" src="https://zirpon.github.io/js/themecolor.js"></script>
     <!-- ThemeColor end -->
 
 
@@ -4245,8 +4146,8 @@ p5 is nullptr<br>
     
 
     <a id="rocket" href="#top" class=""></a>
-	<script type="text/javascript" src="http://yoursite.com/js/totop.js?v=1.0.0" async=""></script>
-    <script type="text/javascript" src="http://yoursite.com/js/toc.js?v=1.0.0" async=""></script>
+	<script type="text/javascript" src="https://zirpon.github.io/js/totop.js?v=1.0.0" async=""></script>
+    <script type="text/javascript" src="https://zirpon.github.io/js/toc.js?v=1.0.0" async=""></script>
     <!-- Migrate from head to bottom, no longer block render and still work -->
 
 </body>

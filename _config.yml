@@ -11,8 +11,9 @@ timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-#url: https://champon.gitee.io/     # Note: don't forget to modify the CNAME file to your url
-#root: /blog
+## 资源目录 储存地址 不能访问 就加载不了 背景图
+url: https://zirpon.github.io/     # Note: don't forget to modify the CNAME file to your url
+root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 
@@ -29,7 +30,7 @@ SEOTitle: Zirpon | Blog
 email: 735037139@qq.com
 description: ""
 keyword: ""
-header-img: "img/header_img/roman.png"
+header-img: img/header_img/roman.png
 #header-img: http://dianfanbao.ltd/file/?home-bg-o.png
 #header-img: http://ozilwgpje.bkt.clouddn.com/scenery/car.jpg?imageslim
 #header-img: http://dianfanbao.ltd:8080/RomanTheatre_ZH-CN9417897135_1920x1080.jpg
@@ -91,7 +92,7 @@ cnzz_track_id: false
 
 # Sidebar settings
 sidebar: true                       # whether or not using Sidebar.
-sidebar-about-description: "For the next quantum leap\t[离开世界之前，一切都是过程]"
+sidebar-about-description: "For the next quantum leap👉🤡 [离开世界之前，一切都是过程]"
 #sidebar-about-description: "离开世界之前，一切都是过程"
 #sidebar-avatar: http://dianfanbao.ltd/file/?ironman-draw.png      # use absolute URL, seeing it's used in both `/` and `/about/`
 sidebar-avatar: img/IMG_5015.JPG   # use absolute URL, seeing it's used in both `/` and `/about/`

@@ -5,9 +5,10 @@ header-img: img/header_img/roman.png
 subtitle: The quick brown fox jumps over the lazy dog
 date: 2024-05-19 22:33:13
 tags:
-catagories:
 - 爬虫
 - scrapy
+catagories:
+
 ---
 
 # scrape 爬虫

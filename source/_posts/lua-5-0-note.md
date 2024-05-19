@@ -8,7 +8,6 @@ top: 999
 tags:
 - lua 5.0
 catagories: 
-- lua
 ---
 
 ## 1. Begin
