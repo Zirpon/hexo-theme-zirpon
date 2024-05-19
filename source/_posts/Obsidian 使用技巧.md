@@ -16,7 +16,6 @@ catagories:
 	- dataviewjs
 	- Linter
 	- admonition
-top: 999
 tags: 
 	- diary/year2022
 	- diary/month04

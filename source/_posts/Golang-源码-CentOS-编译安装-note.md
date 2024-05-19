@@ -2,7 +2,6 @@
 title: Golang 源码编译安装 CentOS 7 note
 catalog: true
 header-img: "img/header_img/roman.png"
-top: 999
 subtitle: The quick brown fox jumps over the lazy dog
 date: 2019-03-04 10:50:56
 tags:
