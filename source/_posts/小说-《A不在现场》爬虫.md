@@ -15,7 +15,7 @@ top: 9999
 
 ## 爬取 小说正文 http://st.kanxshuo.com
 
-保存为markdown 格式 [A不在现场](kanxshuo-他不在现场-苏格拉夫顿-27846.txt)
+保存为markdown 格式 [《A不在现场》前11章](kanxshuo-他不在现场-苏格拉夫顿-27846.txt)
 
 
 ## 下载B站 有声小说视频
@@ -62,7 +62,16 @@ normal 模式下 yy辅助一行空行
 
 输入 150@a 表示重复执行 150次录制操作
 ```
+[《不在现场》11章到最后一章](《不在现场》11章到最后一章.txt)
 
-[视频字幕版](《不在现场》11章到最后一章.txt)
+### 使用 bash脚本 分割大文本文件
+[linux的history命令只显示最新10条](https://blog.csdn.net/u013541707/article/details/107359727)
+```bash
+  wc -l all.log
+  split -l 35000 -d --verbose all.log all-log-split-
+  for i in `ls | grep all-log-split-`;do a=`echo $i.txt`; mv $i $a;done
+```
 
 ## 爬取 B站 《庆余年》 有声小说视频
+
+[《庆余年》小说正文](《庆余年》_qinkan.net.txt)
