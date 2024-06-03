@@ -5,7 +5,12 @@ header-img: img/header_img/roman.png
 subtitle: The quick brown fox jumps over the lazy dog
 date: 2024-06-03 14:42:19
 tags:
+- python
+- ocrmypdf
+- Tesseract
+- pdf转文字
 catagories:
+top: 99
 ---
 
 # 免费 零基础自行动手 pdf转文字

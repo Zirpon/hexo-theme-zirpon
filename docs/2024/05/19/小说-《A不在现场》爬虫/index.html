@@ -171,7 +171,7 @@
                             </span>
                             <div class="blank_box"></div>
                             <span class="meta">
-                              Words <span class="post-count">231</span> In Total
+                              Words <span class="post-count">312</span> In Total
                             </span>
                             <div class="blank_box"></div>
                             <!-- 不蒜子统计 start -->
@@ -324,7 +324,7 @@
 
                 <h1>scrape 爬虫</h1>
 <h2 id="爬取-小说正文-http-st-kanxshuo-com"><a class="header-anchor" href="#爬取-小说正文-http-st-kanxshuo-com">¶</a>爬取 小说正文 <a href="http://st.kanxshuo.com" target="_blank" rel="noopener">http://st.kanxshuo.com</a></h2>
-<p>保存为markdown 格式 <a href="kanxshuo-%E4%BB%96%E4%B8%8D%E5%9C%A8%E7%8E%B0%E5%9C%BA-%E8%8B%8F%E6%A0%BC%E6%8B%89%E5%A4%AB%E9%A1%BF-27846.txt">A不在现场</a></p>
+<p>保存为markdown 格式 <a href="kanxshuo-%E4%BB%96%E4%B8%8D%E5%9C%A8%E7%8E%B0%E5%9C%BA-%E8%8B%8F%E6%A0%BC%E6%8B%89%E5%A4%AB%E9%A1%BF-27846.txt">《A不在现场》前11章</a></p>
 <h2 id="下载B站-有声小说视频"><a class="header-anchor" href="#下载B站-有声小说视频">¶</a>下载B站 有声小说视频</h2>
 <p>使用剪映 识别视频字幕 保存为小说正文</p>
 <h3 id="使用vim-修改-视频字幕小说正文"><a class="header-anchor" href="#使用vim-修改-视频字幕小说正文">¶</a>使用vim 修改 视频字幕小说正文</h3>
@@ -337,7 +337,12 @@
 </blockquote>
 <h4 id="vim-每10行插入-3行空行"><a class="header-anchor" href="#vim-每10行插入-3行空行">¶</a>vim 每10行插入 3行空行</h4>
 <figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">normal 模式下 yy辅助一行空行</span><br><span class="line"></span><br><span class="line">输入 qa 进入录制模式</span><br><span class="line"></span><br><span class="line">按<span class="number">10</span>次 j 跳过<span class="number">10</span>行</span><br><span class="line"></span><br><span class="line">按<span class="number">3</span>次 P 插入拷贝空行</span><br><span class="line"></span><br><span class="line">输入q 退出录制模式</span><br><span class="line"></span><br><span class="line">输入 <span class="symbol">150@</span>a 表示重复执行 <span class="number">150</span>次录制操作</span><br></pre></td></tr></table></figure>
-<p><a href="%E3%80%8A%E4%B8%8D%E5%9C%A8%E7%8E%B0%E5%9C%BA%E3%80%8B11%E7%AB%A0%E5%88%B0%E6%9C%80%E5%90%8E%E4%B8%80%E7%AB%A0.txt">视频字幕版</a></p>
+<p><a href="%E3%80%8A%E4%B8%8D%E5%9C%A8%E7%8E%B0%E5%9C%BA%E3%80%8B11%E7%AB%A0%E5%88%B0%E6%9C%80%E5%90%8E%E4%B8%80%E7%AB%A0.txt">《不在现场》11章到最后一章</a></p>
+<h3 id="使用-bash脚本-分割大文本文件"><a class="header-anchor" href="#使用-bash脚本-分割大文本文件">¶</a>使用 bash脚本 分割大文本文件</h3>
+<p><a href="https://blog.csdn.net/u013541707/article/details/107359727" target="_blank" rel="noopener">linux的history命令只显示最新10条</a></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">wc -l all.log</span><br><span class="line">split -l 35000 -d --verbose all.log all-log-split-</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> `ls | grep all-log-split-`;<span class="keyword">do</span> a=`<span class="built_in">echo</span> <span class="variable">$i</span>.txt`; mv <span class="variable">$i</span> <span class="variable">$a</span>;<span class="keyword">done</span></span><br></pre></td></tr></table></figure>
+<h2 id="爬取-B站-《庆余年》-有声小说视频"><a class="header-anchor" href="#爬取-B站-《庆余年》-有声小说视频">¶</a>爬取 B站 《庆余年》 有声小说视频</h2>
+<p><a href="%E3%80%8A%E5%BA%86%E4%BD%99%E5%B9%B4%E3%80%8B_qinkan.net.txt">《庆余年》小说正文</a></p>
 
                 
 
@@ -385,7 +390,7 @@
         <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#"><span class="toc-nav-text">scrape 爬虫</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#爬取-小说正文-http-st-kanxshuo-com"><span class="toc-nav-text">爬取 小说正文 http:&#x2F;&#x2F;st.kanxshuo.com</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#下载B站-有声小说视频"><span class="toc-nav-text">下载B站 有声小说视频</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#使用vim-修改-视频字幕小说正文"><span class="toc-nav-text">使用vim 修改 视频字幕小说正文</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#vim-每-5行-合并为一行"><span class="toc-nav-text">vim 每 5行 合并为一行</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#vim-匹配-数字数字-并前后插入换行符"><span class="toc-nav-text">vim 匹配 #### 数字数字. 并前后插入换行符</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#vim-每10行插入-3行空行"><span class="toc-nav-text">vim 每10行插入 3行空行</span></a></li></ol></li></ol></li></ol></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#"><span class="toc-nav-text">scrape 爬虫</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#爬取-小说正文-http-st-kanxshuo-com"><span class="toc-nav-text">爬取 小说正文 http:&#x2F;&#x2F;st.kanxshuo.com</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#下载B站-有声小说视频"><span class="toc-nav-text">下载B站 有声小说视频</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#使用vim-修改-视频字幕小说正文"><span class="toc-nav-text">使用vim 修改 视频字幕小说正文</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#vim-每-5行-合并为一行"><span class="toc-nav-text">vim 每 5行 合并为一行</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#vim-匹配-数字数字-并前后插入换行符"><span class="toc-nav-text">vim 匹配 #### 数字数字. 并前后插入换行符</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#vim-每10行插入-3行空行"><span class="toc-nav-text">vim 每10行插入 3行空行</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#使用-bash脚本-分割大文本文件"><span class="toc-nav-text">使用 bash脚本 分割大文本文件</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#爬取-B站-《庆余年》-有声小说视频"><span class="toc-nav-text">爬取 B站 《庆余年》 有声小说视频</span></a></li></ol></li></ol>
         
         </div>
       </aside>
