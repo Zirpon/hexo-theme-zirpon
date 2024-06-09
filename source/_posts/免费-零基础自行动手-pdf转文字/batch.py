@@ -21,6 +21,8 @@ import sys
 from pathlib import Path
 
 import ocrmypdf
+from pdf2docx import Converter
+from pdf2docx import parse
 
 # pylint: disable=logging-format-interpolation
 # pylint: disable=logging-not-lazy
@@ -66,3 +68,12 @@ for filename in start_dir.glob("**/*.pdf"):
     elif result == ocrmypdf.ExitCode.ok:
         logging.info("OCR complete")
     logging.info(result)
+
+    #pdf 转 doc
+
+    docx_file = f"{filename}_tmp.docx"
+    #parse(filename, docx_file)
+
+    cv = Converter(output_file)
+    cv.convert(docx_file)
+    cv.close()
