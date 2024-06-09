@@ -147,6 +147,7 @@ import subprocess
 import tempfile
 from tempfile import mkdtemp
 import re
+import io
 
 try:
     from PIL import Image
@@ -243,10 +244,10 @@ def extract_tesseract(filename):
                 image_list = page.get_images()
 
                 # print the number of images found on the page
-                if image_list:
-                    print(f"Found {len(image_list)} images on page {page_index}")
-                else:
-                    print("No images found on page", page_index)
+                #if image_list:
+                #    print(f"Found {len(image_list)} images on page {page_index}")
+                #else:
+                #   print("No images found on page", page_index)
 
                 for image_index, img in enumerate(image_list, start=1): # enumerate the image list
                     xref = img[0] # get the XREF of the image
@@ -255,9 +256,9 @@ def extract_tesseract(filename):
                     if pix.n - pix.alpha > 3: # CMYK: convert to RGB first
                         pix = pymupdf.Pixmap(pymupdf.csRGB, pix)
 
-                    pix.save("%s\page_%05d-image_%02d.png" % (temp_dir, page_index, image_index)) # save the image as png
-                    png_bytes = pix.pil_tobytes(format="PNG", optimize=True)
-                    page_content = pytesseract.image_to_string(Image.open(png_bytes), 'eng+chi_sim')
+                    pix.save("%s\\page_%05d-image_%02d.png" % (temp_dir, page_index, image_index)) # save the image as png
+                    png_bytes = pix.tobytes()
+                    page_content = pytesseract.image_to_string(Image.open(io.BytesIO(png_bytes)), 'eng+chi_sim')
                     contents.append(page_content)
                     pix = None
 
@@ -271,7 +272,7 @@ def extract_tesseract(filename):
                     pngfile = os.path.join(relative_directory, source_path)
                     #print('pic path: ' + repr(pngfile))
 
-                    #page_content = pytesseract.image_to_string(Image.open(pngfile))
+                    #page_content = pytesseract.image_to_string(Image.open(io.BytesIO(pngfile)), 'eng+chi_sim')
                     #contents.append(page_content)
             
             return ''.join(contents)
