@@ -9,7 +9,7 @@ outDict = []
 bookCode = '27846'
 website = 'st.kanxshuo.com/'
 class kanxshuoSpider(scrapy.Spider):
-    name = 'tzbaolwbn-'+str(bookCode)
+    name = 'kanxshuo-'+str(bookCode)
     start_urls = [f'http://{website}/book-{bookCode}-1.html',]
 
     def parse(self, response):
