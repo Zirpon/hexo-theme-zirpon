@@ -25,6 +25,8 @@ top: 9999
 
 #### spider-kanxshuo.py
 
+> 其中 `./utils` 文件夹 与 `spider-kanxshuo.py` 同级
+
 ```py
 import scrapy
 from scrapy.selector import Selector
