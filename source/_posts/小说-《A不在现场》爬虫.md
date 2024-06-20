@@ -23,8 +23,9 @@ top: 9999
 - [mylog.py](./utils/mylog.py)
 - 依赖 [scrapy](https://docs.scrapy.org/en/latest/) [中文版](https://scrapy-16.readthedocs.io/zh-cn/)
 
-```py
 #### spider-kanxshuo.py
+
+```py
 import scrapy
 from scrapy.selector import Selector
 import json
@@ -96,8 +97,11 @@ class kanxshuoSpider(scrapy.Spider):
             #with open(outjsonName, "w+", encoding='utf-8') as f:
             #    # json.dump(dict_, f)  # 写为一行
             #    json.dump(outDict, f, indent=2, sort_keys=False, ensure_ascii=False)  # 写为多行
+```
 
-#### mylog.py
+#### ./utils/mylog.py
+
+```py
 import logging, coloredlogs
 
 def mylogger(name):
