@@ -11,7 +11,7 @@ catagories:
 top: 9999
 ---
 
-# scrape 爬虫
+# scrapy 爬虫
 
 ## 爬取 小说正文 http://st.kanxshuo.com
 
@@ -21,6 +21,7 @@ top: 9999
 
 - [spider-kanxshuo.py](spider-kanxshuo.py) 
 - [mylog.py](./utils/mylog.py)
+- 依赖 [scrapy](https://docs.scrapy.org/en/latest/) [中文版](https://scrapy-16.readthedocs.io/zh-cn/)
 
 ```py
 #### spider-kanxshuo.py
@@ -125,6 +126,12 @@ def mylogger(name):
         logger.error('Print log level：error')
         logger.critical('Print log level：critical')
     """
+```
+
+### python 执行脚本
+
+```sh
+scrapy runspider spider-kanxshuo.py -o spider-kanxshuo.json -s FEED_EXPORT_ENCODING=UTF-8 -s LOG_FILE=spider-kanxshuo.log
 ```
 
 ## 下载B站 有声小说视频
