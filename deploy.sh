@@ -1,2 +1,3 @@
 hexo g
-cp -r ./public ./docs
+rm -rf ./docs
+cp -rf ./public ./docs
