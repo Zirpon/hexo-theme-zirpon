@@ -1,31 +1,3 @@
----
-title: 油猴脚本
-catalog: true
-header-img: img/header_img/roman.png
-subtitle: The quick brown fox jumps over the lazy dog
-top: 99999
-date: 2024-06-20 23:49:10
-tags:
-catagories:
----
-
-# 油猴脚本
-
-## 1. 斗鱼开播提醒
-
-> 此 Script 继承了 [@P-](https://greasyfork.org/zh-CN/users/250428-p) 的 原脚本 [斗鱼开播提醒](https://greasyfork.org/zh-CN/scripts/378317-douyu-%E6%96%97%E9%B1%BC%E5%BC%80%E6%92%AD%E6%8F%90%E9%86%92) 在此感谢 @P- 的开发工作。
-
-### 增加功能
-
--   [ ] 下播提醒
--   [ ] 每次提醒重新刷新 关注页面
--   [ ] 粤语/国语 语音播报 `改标题/下播/开播` 提醒
-
-![](https://segmentfault.com/img/bVc0lBc)
-
-### 源码
-
-```js
 // ==UserScript==
 // @name         Douyu斗鱼 主播开播下播提醒 + 粤语/国语语音播报通知
 // @namespace    http://tampermonkey.net/
@@ -918,4 +890,3 @@ notifyTitle("斗鱼开播提醒启动了");
 //window.onbeforeunload = function(event){notifyTitle('开播提醒已退出')}
 //window.onunload = function(event) {notifyTitle('斗鱼开播提醒已退出')}
 window.setInterval(check, 10000);
-```
